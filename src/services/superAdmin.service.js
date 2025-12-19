@@ -12,6 +12,7 @@ const register = async (data) => {
   if (exists) throw new ApiError(httpStatus.BAD_REQUEST, 'Email already registered');
 
   const user = await SuperAdmin.create(data);
+  log('Registered SuperAdmin:', user);
   return user;
 };
 
